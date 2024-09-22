@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Projects - Igor Bobrov</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -80,18 +81,27 @@
             font-weight: bold;
             text-align: center;
             width: 200px; 
+			white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
+       
         .certificate-link:hover {
             background-color: #357ABD;
         }
 
+        .certificate-link:active, 
+        .certificate-link:focus
         .certificate-link:visited {
             color: white; 
         }
 
-        .certificate-link:focus {
-            outline: none; 
+        @media (max-width: 600px) {
+            .certificate-link {
+                font-size: 18px; 
+                padding: 12px 20px; 
+            }
         }
 
     </style>
