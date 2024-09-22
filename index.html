@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Projects - Igor Bobrov</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper scaling on mobile -->
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -75,35 +75,39 @@
             margin-top: 20px;
             padding: 10px 20px;
             background-color: #4A90E2;
-            color: white; 
+            color: white !important; /* Make sure the text is white at all times */
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             text-align: center;
-            width: 200px; 
-			white-space: nowrap; 
+            width: 200px;
+            white-space: nowrap; /* Ensures text doesn't wrap on mobile */
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
-       
         .certificate-link:hover {
             background-color: #357ABD;
+            color: white !important; /* Ensure text remains white on hover */
         }
 
         .certificate-link:active, 
-        .certificate-link:focus
+        .certificate-link:focus,
         .certificate-link:visited {
-            color: white; 
+            color: white !important; /* Ensure the text color remains white */
         }
 
+        .certificate-link:link {
+            color: white !important; /* Ensure the text color is white in all states */
+        }
+
+        /* Extra styling for mobile to ensure text is visible */
         @media (max-width: 600px) {
             .certificate-link {
-                font-size: 18px; 
-                padding: 12px 20px; 
+                font-size: 18px; /* Ensure text is large enough on mobile */
+                padding: 12px 20px; /* Increase padding for touch-friendly buttons */
             }
         }
-
     </style>
 </head>
 <body>
