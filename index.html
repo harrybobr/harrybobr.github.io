@@ -2,49 +2,139 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Igor Bobrov</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: #f0f2f5;
         }
-        h1 {
+
+        header {
+            background-color: #4A90E2;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        h2 {
             color: #333;
+            border-bottom: 2px solid #4A90E2;
+            padding-bottom: 10px;
         }
+
         .projects {
             list-style-type: none;
             padding: 0;
         }
+
         .projects li {
-            margin-bottom: 15px;
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #4A90E2;
         }
+
+        .projects li a {
+            text-decoration: none;
+            color: #4A90E2;
+            font-weight: bold;
+        }
+
         .contacts {
-            margin-top: 40px;
+            margin-top: 60px;
+            text-align: center;
         }
+
+        .contacts h2 {
+            margin-bottom: 20px;
+        }
+
+        .contacts a {
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .certificate-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4A90E2;
+            color: white; 
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            width: 200px; 
+        }
+
+        .certificate-link:hover {
+            background-color: #357ABD;
+        }
+
+        .certificate-link:visited {
+            color: white; 
+        }
+
+        .certificate-link:focus {
+            outline: none; 
+        }
+
     </style>
 </head>
 <body>
 
-    <h1>Igor Bobrov's manual tests</h1>
-    
-    <ul class="projects">
-        <li><strong>Graduation project:</strong> <a href="https://docs.google.com/document/d/1zDX_egeY5Ezi0LbRYnmpfQLn_Dd3vmQyZ75GaJ85WUw/edit?usp=sharing" target="_blank">Yandex.Scooter</a></li>
-    </ul>
+    <header>
+        <h1>Igor Bobrov</h1>
+    </header>
 
-    <h1>Igor Bobrov's automated tests</h1>
-    
-    <ul class="projects">
-        <li><strong>Graduation project part 1:</strong> <a href="https://github.com/harrybobr/Diplom_1.git" target="_blank">Stellar Burgers - Unit Tests</a></li>
-        <li><strong>Graduation project part 2:</strong> <a href="https://github.com/harrybobr/Diplom_2.git" target="_blank">Stellar Burgers - API Tests</a></li>
-        <li><strong>Graduation project part 3:</strong> <a href="https://github.com/harrybobr/Diplom_3.git" target="_blank">Stellar Burgers - Web Application Tests</a></li>
-    </ul>
+    <div class="container">
 
-    <div class="contacts">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:harrybobrov@gmail.com">harrybobrov@gmail.com</a></p>
+        <h2>Manual Tests</h2>
+
+        <ul class="projects">
+            <li>
+                <strong>Graduation project:</strong> <a href="https://docs.google.com/document/d/1zDX_egeY5Ezi0LbRYnmpfQLn_Dd3vmQyZ75GaJ85WUw/edit?usp=sharing" target="_blank">Yandex.Scooter</a>
+            </li>
+        </ul>
+
+        <h2>Automated Tests</h2>
+
+        <ul class="projects">
+            <li>
+                <strong>Graduation project part 1:</strong> <a href="https://github.com/harrybobr/Diplom_1.git" target="_blank">Stellar Burgers - Unit Tests</a>
+            </li>
+            <li>
+                <strong>Graduation project part 2:</strong> <a href="https://github.com/harrybobr/Diplom_2.git" target="_blank">Stellar Burgers - API Tests</a>
+            </li>
+            <li>
+                <strong>Graduation project part 3:</strong> <a href="https://github.com/harrybobr/Diplom_3.git" target="_blank">Stellar Burgers - Web Application Tests</a>
+            </li>
+        </ul>
+
+        <div class="contacts">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:harrybobrov@gmail.com">harrybobrov@gmail.com</a></p>
+            <p>Telegram: <a href="https://t.me/hbLaka">https://t.me/hbLaka</a></p>
+
+            <!-- Ссылка на PDF документ -->
+            <a class="certificate-link" href="/assets/Сertificate_ENG_Бобров_2024-6037-002.pdf" target="_blank">View My Certificate</a>
+        </div>
+
     </div>
 
 </body>
