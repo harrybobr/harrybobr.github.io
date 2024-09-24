@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Projects - Igor Bobrov</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f0f2f5;
+            transition: all 3s ease;
+        }
+
+        header, .container {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Эффект исчезновения */
+        .disappearing {
+            opacity: 0;
+            transform: scale(0.95);
         }
 
         header {
@@ -75,52 +87,52 @@
             margin-top: 20px;
             padding: 10px 20px;
             background-color: #4A90E2;
-            color: white !important; 
+            color: white !important;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             text-align: center;
             width: 200px;
-            white-space: nowrap; 
+            white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
         .certificate-link:hover {
             background-color: #357ABD;
-            color: white !important; 
+            color: white !important;
         }
 
         .certificate-link:active, 
         .certificate-link:focus,
         .certificate-link:visited {
-            color: white !important; 
+            color: white !important;
         }
 
         .certificate-link:link {
-            color: white !important; 
+            color: white !important;
         }
 
-        
         @media (max-width: 600px) {
             .certificate-link {
-                font-size: 18px; 
-                padding: 12px 20px; 
+                font-size: 18px;
+                padding: 12px 20px;
             }
         }
+
     </style>
 </head>
 <body>
 
-    <header>
+    <header id="header">
         <h1>Igor Bobrov</h1>
     </header>
 
-    <div class="container">
+    <div class="container" id="container">
 
         <h2>Manual Tests</h2>
 
-        <ul class="projects">
+        <ul class="projects" id="manual-projects">
             <li>
                 <strong>Graduation project:</strong> <a href="https://docs.google.com/document/d/1zDX_egeY5Ezi0LbRYnmpfQLn_Dd3vmQyZ75GaJ85WUw/edit?usp=sharing" target="_blank">Yandex.Scooter</a>
             </li>
@@ -128,7 +140,7 @@
 
         <h2>Automated Tests</h2>
 
-        <ul class="projects">
+        <ul class="projects" id="auto-projects">
             <li>
                 <strong>Graduation project part 1:</strong> <a href="https://github.com/harrybobr/Diplom_1.git" target="_blank">Stellar Burgers - Unit Tests</a>
             </li>
@@ -140,7 +152,7 @@
             </li>
         </ul>
 
-        <div class="contacts">
+        <div class="contacts" id="contacts">
             <h2>Contact Me</h2>
             <p>Email: <a href="mailto:harrybobrov@gmail.com">harrybobrov@gmail.com</a></p>
             <p>Telegram: <a href="https://t.me/hbLaka">https://t.me/hbLaka</a></p>
@@ -150,6 +162,39 @@
         </div>
 
     </div>
+
+    <script>
+        const inactivityTime = 15000; // Таймер (15 секунд)
+        let timer;
+
+        // Функция для плавного исчезновения
+        function startDisappearing() {
+            document.getElementById('header').style.transition = 'opacity 15s ease, transform 15s ease';
+            document.getElementById('container').style.transition = 'opacity 15s ease, transform 15s ease';
+            document.getElementById('header').classList.add('disappearing');
+            document.getElementById('container').classList.add('disappearing');
+        }
+
+        // Функция для восстановления элементов
+        function restoreVisibility() {
+            document.getElementById('header').style.transition = 'opacity 3s ease, transform 3s ease';
+            document.getElementById('container').style.transition = 'opacity 3s ease, transform 3s ease';
+            document.getElementById('header').classList.remove('disappearing');
+            document.getElementById('container').classList.remove('disappearing');
+        }
+
+        function resetTimer() {
+            clearTimeout(timer);
+            restoreVisibility();  // Восстановить элементы при движении мыши
+            timer = setTimeout(startDisappearing, inactivityTime);  // Запустить таймер для исчезновения
+        }
+
+        // Запуск таймера при загрузке страницы
+        window.onload = function() {
+            timer = setTimeout(startDisappearing, inactivityTime); // Запуск таймера для исчезновения
+            document.onmousemove = resetTimer; // Сброс таймера при движении мыши
+        };
+    </script>
 
 </body>
 </html>
